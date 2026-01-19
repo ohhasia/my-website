@@ -20,6 +20,20 @@ const App = {
                 localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
             }
         });
+        
+        // 全局弹窗关闭事件委托
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-close')) {
+                const modal = e.target.closest('.modal');
+                if (modal) {
+                    modal.remove();
+                }
+            }
+            // 点击弹窗外部关闭
+            if (e.target.classList.contains('modal')) {
+                e.target.remove();
+            }
+        });
     },
     
     // 检查登录状态

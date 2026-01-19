@@ -9,7 +9,7 @@ const MarketModule = {
  high: 8.8,
  low: 8.1,
  volume: '12,580',
- unit: '元/公斤',
+ unit: '�?公斤',
  trend: 'up',
  daily: [8.2, 8.3, 8.4, 8.5, 8.6, 8.5, 8.7, 8.8, 8.7, 8.6, 8.5, 8.4, 8.5, 8.6, 8.7, 8.8, 8.7, 8.6, 8.5, 8.4, 8.5, 8.6, 8.7, 8.5],
  weekly: [7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.5],
@@ -24,7 +24,7 @@ const MarketModule = {
  high: 4.3,
  low: 4.1,
  volume: '28,450',
- unit: '元/公斤',
+ unit: '�?公斤',
  trend: 'up',
  daily: [4.15, 4.16, 4.17, 4.18, 4.19, 4.18, 4.19, 4.2, 4.21, 4.2, 4.19, 4.18, 4.19, 4.2, 4.21, 4.22, 4.21, 4.2, 4.19, 4.2, 4.21, 4.2, 4.2, 4.2],
  weekly: [4.0, 4.05, 4.08, 4.1, 4.12, 4.15, 4.2],
@@ -39,7 +39,7 @@ const MarketModule = {
  high: 6.2,
  low: 5.6,
  volume: '15,230',
- unit: '元/公斤',
+ unit: '�?公斤',
  trend: 'down',
  daily: [6.0, 5.95, 5.9, 5.85, 5.8, 5.85, 5.8, 5.75, 5.7, 5.75, 5.8, 5.85, 5.8, 5.75, 5.7, 5.75, 5.8, 5.85, 5.8, 5.75, 5.8, 5.85, 5.8, 5.8],
  weekly: [5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 5.8],
@@ -54,7 +54,7 @@ const MarketModule = {
  high: 11.5,
  low: 10.8,
  volume: '22,680',
- unit: '元/公斤',
+ unit: '�?公斤',
  trend: 'up',
  daily: [11.0, 11.05, 11.1, 11.15, 11.2, 11.15, 11.2, 11.25, 11.3, 11.25, 11.2, 11.15, 11.2, 11.25, 11.3, 11.35, 11.3, 11.25, 11.2, 11.15, 11.2, 11.25, 11.2, 11.2],
  weekly: [10.5, 10.6, 10.7, 10.8, 10.9, 11.0, 11.2],
@@ -69,7 +69,7 @@ const MarketModule = {
  high: 39.5,
  low: 38.0,
  volume: '8,920',
- unit: '元/公斤',
+ unit: '�?公斤',
  trend: 'down',
  daily: [39.0, 38.9, 38.8, 38.7, 38.6, 38.7, 38.8, 38.7, 38.6, 38.5, 38.6, 38.7, 38.6, 38.5, 38.4, 38.5, 38.6, 38.7, 38.6, 38.5, 38.6, 38.5, 38.5, 38.5],
  weekly: [37.5, 37.8, 38.0, 38.5, 38.8, 39.0, 38.5],
@@ -84,7 +84,7 @@ const MarketModule = {
  mainContent.innerHTML = `
  <div class="market-page">
  <div class="page-header">
- <h1>农产品行情 📊</h1>
+ <h1>农产品行�?📊</h1>
  <p class="page-subtitle">实时掌握市场动态，把握交易时机</p>
  </div>
  
@@ -95,7 +95,7 @@ const MarketModule = {
  <div class="market-card ${item.trend}">
  <div class="market-header">
  <h3>${item.name}</h3>
- <span class="market-trend">${item.trend === 'up' ? '↑' : '↓'}</span>
+ <span class="market-trend">${item.trend === 'up' ? '�? : '�?}</span>
  </div>
  <div class="market-price">
  <span class="price-main">${item.currentPrice}</span>
@@ -123,9 +123,9 @@ const MarketModule = {
  ${Object.entries(this.data).map(([key, item]) => `<option value="${key}">${item.name}</option>`).join('')}
  </select>
  <div class="period-buttons">
- <button class="period-btn active" data-period="daily" onclick="MarketModule.changePeriod('daily')">日K线</button>
- <button class="period-btn" data-period="weekly" onclick="MarketModule.changePeriod('weekly')">周K线</button>
- <button class="period-btn" data-period="monthly" onclick="MarketModule.changePeriod('monthly')">月K线</button>
+ <button class="period-btn active" data-period="daily" onclick="MarketModule.changePeriod('daily')">日K�?/button>
+ <button class="period-btn" data-period="weekly" onclick="MarketModule.changePeriod('weekly')">周K�?/button>
+ <button class="period-btn" data-period="monthly" onclick="MarketModule.changePeriod('monthly')">月K�?/button>
  </div>
  </div>
  <div id="marketChart" style="width: 100%; height: 500px;"></div>
@@ -148,7 +148,7 @@ const MarketModule = {
  </div>
  <div class="news-item">
  <span class="news-date">2024-01-12</span>
- <span class="news-title">鸡蛋价格持续上涨，养殖户补栏积极性提高</span>
+ <span class="news-title">鸡蛋价格持续上涨，养殖户补栏积极性提�?/span>
  </div>
  <div class="news-item">
  <span class="news-date">2024-01-11</span>
@@ -183,13 +183,13 @@ const MarketModule = {
  
  const option = {
  title: {
- text: `${product.name} ${period === 'daily' ? '日' : period === 'weekly' ? '周' : '月'}K线走势`,
+ text: `${product.name} ${period === 'daily' ? '�? : period === 'weekly' ? '�? : '�?}K线走势`,
  left: 'center'
  },
  tooltip: {
  trigger: 'axis',
  formatter: function(params) {
- return `${params[0].axisValue}<br/>价格：${params[0].value} 元/公斤`;
+ return `${params[0].axisValue}<br/>价格�?{params[0].value} �?公斤`;
  }
  },
  grid: {
@@ -207,7 +207,7 @@ const MarketModule = {
  type: 'value',
  scale: true,
  axisLabel: {
- formatter: '{value} 元'
+ formatter: '{value} �?
  }
  },
  series: [{
@@ -250,7 +250,7 @@ const MarketModule = {
  for (let i = count - 1; i >= 0; i--) {
  const date = new Date(today);
  date.setDate(date.getDate() - i * 7);
- dates.push(`第${count - i}周`);
+ dates.push(`�?{count - i}周`);
  }
  } else {
  for (let i = count - 1; i >= 0; i--) {
@@ -282,12 +282,12 @@ const MarketModule = {
  <div class="modal-content detail-modal">
  <div class="modal-header">
  <h2>${product.name} - 详细行情</h2>
- <button class="modal-close" onclick="modal.remove()">×</button>
+ <button class="modal-close" >×</button>
  </div>
  <div class="modal-body">
  <div class="detail-grid">
  <div class="detail-item">
- <span class="detail-label">当前价格：</span>
+ <span class="detail-label">当前价格�?/span>
  <span class="detail-value price-big">${product.currentPrice} ${product.unit}</span>
  </div>
  <div class="detail-item">
@@ -299,11 +299,11 @@ const MarketModule = {
  <span class="detail-value ${product.trend}">${product.changeAmount}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">最高价：</span>
+ <span class="detail-label">最高价�?/span>
  <span class="detail-value">${product.high} ${product.unit}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">最低价：</span>
+ <span class="detail-label">最低价�?/span>
  <span class="detail-value">${product.low} ${product.unit}</span>
  </div>
  <div class="detail-item">
@@ -314,10 +314,10 @@ const MarketModule = {
  
  <div class="recommendations">
  <h3>交易建议</h3>
- <p>${product.trend === 'up' ? '当前价格呈上涨趋势，建议关注后续走势，可考虑适时买入。' : '当前价格呈下跌趋势，建议观望或择机卖出。'}</p>
+ <p>${product.trend === 'up' ? '当前价格呈上涨趋势，建议关注后续走势，可考虑适时买入�? : '当前价格呈下跌趋势，建议观望或择机卖出�?}</p>
  </div>
  
- <button class="btn btn-primary btn-block" onclick="modal.remove()">关闭</button>
+ <button class="btn btn-primary btn-block" >关闭</button>
  </div>
  </div>
  `;
@@ -578,3 +578,4 @@ const MarketModule = {
  document.head.appendChild(style);
  }
 };
+

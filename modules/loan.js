@@ -1,13 +1,13 @@
 const LoanModule = {
  products: [
- { id: 1, name: '农易贷', type: '信用贷', maxAmount: 500000, minRate: 0.065, maxTerm: 365, description: '专为农户设计的信用贷款，手续简便，快速到账', requirements: ['农户身份认证', '有稳定经营收入', '信用记录良好'], icon: '🌾' },
- { id: 2, name: '商通贷', type: '经营贷', maxAmount: 2000000, minRate: 0.058, maxTerm: 730, description: '支持农产品批发商扩大经营，额度高，期限灵活', requirements: ['企业营业执照', '近6个月经营流水', '资产证明'], icon: '🏢' },
- { id: 3, name: '供应链贷', type: '供应链', maxAmount: 10000000, minRate: 0.052, maxTerm: 365, description: '基于供应链核心企业信用，为上下游企业提供融资', requirements: ['核心企业推荐', '真实交易背景', '应收账款质押'], icon: '🔗' }
+ { id: 1, name: '农易�?, type: '信用�?, maxAmount: 500000, minRate: 0.065, maxTerm: 365, description: '专为农户设计的信用贷款，手续简便，快速到�?, requirements: ['农户身份认证', '有稳定经营收�?, '信用记录良好'], icon: '🌾' },
+ { id: 2, name: '商通贷', type: '经营�?, maxAmount: 2000000, minRate: 0.058, maxTerm: 730, description: '支持农产品批发商扩大经营，额度高，期限灵�?, requirements: ['企业营业执照', '�?个月经营流水', '资产证明'], icon: '🏢' },
+ { id: 3, name: '供应链贷', type: '供应�?, maxAmount: 10000000, minRate: 0.052, maxTerm: 365, description: '基于供应链核心企业信用，为上下游企业提供融资', requirements: ['核心企业推荐', '真实交易背景', '应收账款质押'], icon: '🔗' }
  ],
  applications: [
- { id: 1, product: '农易贷', amount: 200000, term: 180, status: 'pending', applyDate: '2024-01-15', progress: '资料审核中' },
- { id: 2, product: '商通贷', amount: 500000, term: 365, status: 'approved', applyDate: '2024-01-10', approveDate: '2024-01-12', progress: '已放款' },
- { id: 3, product: '供应链贷', amount: 2000000, term: 365, status: 'rejected', applyDate: '2024-01-08', rejectReason: '交易背景不清晰', progress: '审核未通过' }
+ { id: 1, product: '农易�?, amount: 200000, term: 180, status: 'pending', applyDate: '2024-01-15', progress: '资料审核�? },
+ { id: 2, product: '商通贷', amount: 500000, term: 365, status: 'approved', applyDate: '2024-01-10', approveDate: '2024-01-12', progress: '已放�? },
+ { id: 3, product: '供应链贷', amount: 2000000, term: 365, status: 'rejected', applyDate: '2024-01-08', rejectReason: '交易背景不清�?, progress: '审核未通过' }
  ],
  
  render() {
@@ -16,7 +16,7 @@ const LoanModule = {
  <div class="loan-page">
  <div class="page-header">
  <h1>助贷服务 💰</h1>
- <p class="page-subtitle">智能匹配金融产品，解决您的资金需求</p>
+ <p class="page-subtitle">智能匹配金融产品，解决您的资金需�?/p>
  </div>
  
  <div class="products-section">
@@ -32,16 +32,16 @@ const LoanModule = {
  
  <div class="product-terms">
  <div class="term-item">
- <span class="term-label">最高额度</span>
- <span class="term-value">¥${(product.maxAmount / 10000).toFixed(0)}万</span>
+ <span class="term-label">最高额�?/span>
+ <span class="term-value">¥${(product.maxAmount / 10000).toFixed(0)}�?/span>
  </div>
  <div class="term-item">
- <span class="term-label">最低利率</span>
+ <span class="term-label">最低利�?/span>
  <span class="term-value">${(product.minRate * 100).toFixed(2)}%</span>
  </div>
  <div class="term-item">
- <span class="term-label">最长期限</span>
- <span class="term-value">${product.maxTerm}天</span>
+ <span class="term-label">最长期�?/span>
+ <span class="term-value">${product.maxTerm}�?/span>
  </div>
  </div>
  
@@ -75,9 +75,9 @@ const LoanModule = {
  
  <div class="app-body">
  <div class="app-info">
- <span>申请金额：¥${(app.amount / 10000).toFixed(2)}万</span>
- <span>贷款期限：${app.term}天</span>
- <span>申请日期：${app.applyDate}</span>
+ <span>申请金额：�?{(app.amount / 10000).toFixed(2)}�?/span>
+ <span>贷款期限�?{app.term}�?/span>
+ <span>申请日期�?{app.applyDate}</span>
  </div>
  
  <div class="app-progress">
@@ -105,22 +105,22 @@ const LoanModule = {
  <form id="creditForm" onsubmit="LoanModule.calculateCredit(event)">
  <div class="form-row">
  <div class="form-group">
- <label>年经营收入(万元)</label>
- <input type="number" name="income" required min="1" placeholder="请输入">
+ <label>年经营收�?万元)</label>
+ <input type="number" name="income" required min="1" placeholder="请输�?>
  </div>
  <div class="form-group">
  <label>资产总额(万元)</label>
- <input type="number" name="assets" required min="1" placeholder="请输入">
+ <input type="number" name="assets" required min="1" placeholder="请输�?>
  </div>
  </div>
  <div class="form-row">
  <div class="form-group">
  <label>负债总额(万元)</label>
- <input type="number" name="liabilities" required min="0" placeholder="请输入">
+ <input type="number" name="liabilities" required min="0" placeholder="请输�?>
  </div>
  <div class="form-group">
- <label>经营年限(年)</label>
- <input type="number" name="years" required min="1" max="50" placeholder="请输入">
+ <label>经营年限(�?</label>
+ <input type="number" name="years" required min="1" max="50" placeholder="请输�?>
  </div>
  </div>
  <button type="submit" class="btn btn-primary btn-block">立即评估</button>
@@ -141,9 +141,9 @@ const LoanModule = {
  
  getStatusText(status) {
  const texts = {
- pending: '审核中',
+ pending: '审核�?,
  approved: '已通过',
- rejected: '已拒绝'
+ rejected: '已拒�?
  };
  return texts[status];
  },
@@ -167,48 +167,48 @@ const LoanModule = {
  <div class="modal-content">
  <div class="modal-header">
  <h2>申请${product.name}</h2>
- <button class="modal-close" onclick="modal.remove()">×</button>
+ <button class="modal-close" >×</button>
  </div>
  <div class="modal-body">
  <div class="product-summary">
  <h3>产品信息</h3>
  <div class="summary-grid">
- <span>最高额度：¥${(product.maxAmount / 10000).toFixed(0)}万</span>
+ <span>最高额度：¥${(product.maxAmount / 10000).toFixed(0)}�?/span>
  <span>最低利率：${(product.minRate * 100).toFixed(2)}%</span>
- <span>最长期限：${product.maxTerm}天</span>
+ <span>最长期限：${product.maxTerm}�?/span>
  </div>
  </div>
  
  <form id="loanForm" onsubmit="LoanModule.handleApply(event, ${productId})">
  <div class="form-group">
- <label>申请金额(元) *</label>
- <input type="number" name="amount" required min="10000" max="${product.maxAmount}" placeholder="请输入申请金额">
+ <label>申请金额(�? *</label>
+ <input type="number" name="amount" required min="10000" max="${product.maxAmount}" placeholder="请输入申请金�?>
  </div>
  
  <div class="form-group">
- <label>贷款期限(天) *</label>
- <input type="number" name="term" required min="30" max="${product.maxTerm}" placeholder="请输入贷款期限">
+ <label>贷款期限(�? *</label>
+ <input type="number" name="term" required min="30" max="${product.maxTerm}" placeholder="请输入贷款期�?>
  </div>
  
  <div class="form-group">
- <label>贷款用途 *</label>
+ <label>贷款用�?*</label>
  <select name="purpose" required>
- <option value="">请选择用途</option>
+ <option value="">请选择用�?/option>
  <option value="采购">采购货物</option>
  <option value="扩建">扩建生产</option>
  <option value="周转">资金周转</option>
- <option value="其他">其他用途</option>
+ <option value="其他">其他用�?/option>
  </select>
  </div>
  
  <div class="form-group">
- <label>联系人 *</label>
+ <label>联系�?*</label>
  <input type="text" name="contactName" required placeholder="请输入联系人姓名">
  </div>
  
  <div class="form-group">
  <label>联系电话 *</label>
- <input type="tel" name="contactPhone" required placeholder="请输入联系电话">
+ <input type="tel" name="contactPhone" required placeholder="请输入联系电�?>
  </div>
  
  <div class="form-group">
@@ -238,22 +238,22 @@ const LoanModule = {
  term: parseInt(data.term),
  status: 'pending',
  applyDate: new Date().toISOString().split('T')[0],
- progress: '资料审核中'
+ progress: '资料审核�?
  });
  
  document.querySelector('.modal').remove();
  this.render();
- alert('贷款申请已提交！我们将在3个工作日内与您联系。');
+ alert('贷款申请已提交！我们将在3个工作日内与您联系�?);
  },
  
  cancelApplication(id) {
- if (confirm('确定要撤销此贷款申请吗？')) {
+ if (confirm('确定要撤销此贷款申请吗�?)) {
  const app = this.applications.find(a => a.id === id);
  if (app) {
  app.status = 'cancelled';
  app.progress = '已撤销';
  this.render();
- alert('已撤销贷款申请！');
+ alert('已撤销贷款申请�?);
  }
  }
  },
@@ -268,12 +268,12 @@ const LoanModule = {
  <div class="modal-content detail-modal">
  <div class="modal-header">
  <h2>贷款申请详情</h2>
- <button class="modal-close" onclick="modal.remove()">×</button>
+ <button class="modal-close" >×</button>
  </div>
  <div class="modal-body">
  <div class="detail-grid">
  <div class="detail-item">
- <span class="detail-label">贷款产品：</span>
+ <span class="detail-label">贷款产品�?/span>
  <span class="detail-value">${app.product}</span>
  </div>
  <div class="detail-item">
@@ -281,19 +281,19 @@ const LoanModule = {
  <span class="detail-value status-${app.status}">${this.getStatusText(app.status)}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">申请金额：</span>
- <span class="detail-value">¥${(app.amount / 10000).toFixed(2)}万</span>
+ <span class="detail-label">申请金额�?/span>
+ <span class="detail-value">¥${(app.amount / 10000).toFixed(2)}�?/span>
  </div>
  <div class="detail-item">
- <span class="detail-label">贷款期限：</span>
- <span class="detail-value">${app.term}天</span>
+ <span class="detail-label">贷款期限�?/span>
+ <span class="detail-value">${app.term}�?/span>
  </div>
  <div class="detail-item">
- <span class="detail-label">申请日期：</span>
+ <span class="detail-label">申请日期�?/span>
  <span class="detail-value">${app.applyDate}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">当前进度：</span>
+ <span class="detail-label">当前进度�?/span>
  <span class="detail-value">${app.progress}</span>
  </div>
  </div>
@@ -302,9 +302,9 @@ const LoanModule = {
  <div class="loan-approval">
  <h3>审批结果</h3>
  <div class="approval-info">
- <p><strong>审批通过日期：</strong>${app.approveDate}</p>
- <p><strong>预计放款日期：</strong>3个工作日内</p>
- <p><strong>温馨提示：</strong>请保持手机畅通，银行客户经理将与您联系</p>
+ <p><strong>审批通过日期�?/strong>${app.approveDate}</p>
+ <p><strong>预计放款日期�?/strong>3个工作日�?/p>
+ <p><strong>温馨提示�?/strong>请保持手机畅通，银行客户经理将与您联�?/p>
  </div>
  </div>
  ` : ''}
@@ -313,13 +313,13 @@ const LoanModule = {
  <div class="loan-rejection">
  <h3>审批结果</h3>
  <div class="rejection-info">
- <p><strong>拒绝原因：</strong>${app.rejectReason}</p>
- <p><strong>建议：</strong>请完善相关材料后重新提交申请</p>
+ <p><strong>拒绝原因�?/strong>${app.rejectReason}</p>
+ <p><strong>建议�?/strong>请完善相关材料后重新提交申请</p>
  </div>
  </div>
  ` : ''}
  
- <button class="btn btn-primary btn-block" onclick="modal.remove()">关闭</button>
+ <button class="btn btn-primary btn-block" >关闭</button>
  </div>
  </div>
  `;
@@ -355,7 +355,7 @@ const LoanModule = {
  <div class="loan-estimate">
  <div class="estimate-item">
  <span class="estimate-label">可贷额度</span>
- <span class="estimate-value">¥${maxLoan.toFixed(0)}万</span>
+ <span class="estimate-value">¥${maxLoan.toFixed(0)}�?/span>
  </div>
  <div class="estimate-item">
  <span class="estimate-label">建议利率</span>
@@ -363,7 +363,7 @@ const LoanModule = {
  </div>
  <div class="estimate-item">
  <span class="estimate-label">建议期限</span>
- <span class="estimate-value">${this.getSuggestedTerm(years)}天</span>
+ <span class="estimate-value">${this.getSuggestedTerm(years)}�?/span>
  </div>
  </div>
  
@@ -382,7 +382,7 @@ const LoanModule = {
  if (score >= 800) return '优秀';
  if (score >= 700) return '良好';
  if (score >= 600) return '中等';
- if (score >= 500) return '一般';
+ if (score >= 500) return '一�?;
  return '较差';
  },
  
@@ -401,10 +401,10 @@ const LoanModule = {
  
  getRecommendations(score, maxLoan) {
  const recs = [];
- if (maxLoan <= 50) recs.push('<li>农易贷 - 适合小额资金需求</li>');
+ if (maxLoan <= 50) recs.push('<li>农易�?- 适合小额资金需�?/li>');
  if (maxLoan > 50 && maxLoan <= 200) recs.push('<li>商通贷 - 适合中小企业经营</li>');
  if (maxLoan > 200) recs.push('<li>供应链贷 - 适合大型企业融资</li>');
- return recs.length > 0 ? recs.join('') : '<li>建议完善信息后重新评估</li>';
+ return recs.length > 0 ? recs.join('') : '<li>建议完善信息后重新评�?/li>';
  },
  
  addStyles() {
@@ -539,7 +539,7 @@ const LoanModule = {
  }
  
  .product-requirements li::before {
- content: '✓ ';
+ content: '�?';
  color: #52c41a;
  font-weight: bold;
  margin-right: 8px;
@@ -843,3 +843,4 @@ const LoanModule = {
  document.head.appendChild(style);
  }
 };
+

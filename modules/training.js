@@ -1,10 +1,10 @@
 const TrainingModule = {
  courses: [
- { id: 1, title: '农产品行情分析入门', instructor: '张教授', duration: '4小时', level: '初级', price: 99, students: 1250, rating: 4.8, cover: '📈', description: '学习农产品价格走势分析方法，掌握基本分析技巧。', lessons: 8 },
- { id: 2, title: '交易实战技巧', instructor: '李老师', duration: '6小时', level: '中级', price: 199, students: 890, rating: 4.9, cover: '⚔️', description: '实战交易策略与技巧，提高交易成功率。', lessons: 12 },
- { id: 3, title: '农产品供应链管理', instructor: '王经理', duration: '5小时', level: '中级', price: 149, students: 670, rating: 4.7, cover: '📦', description: '了解农产品供应链运作模式，优化交易流程。', lessons: 10 },
- { id: 4, title: '风险控制与资金管理', instructor: '赵专家', duration: '4.5小时', level: '高级', price: 249, students: 450, rating: 4.9, cover: '🛡️', description: '学习风险控制方法，合理管理交易资金。', lessons: 9 },
- { id: 5, title: '电子商务与农产品营销', instructor: '陈老师', duration: '5.5小时', level: '中级', price: 169, students: 780, rating: 4.8, cover: '💻', description: '利用互联网平台推广农产品，拓展销售渠道。', lessons: 11 }
+ { id: 1, title: '农产品行情分析入�?, instructor: '张教�?, duration: '4小时', level: '初级', price: 99, students: 1250, rating: 4.8, cover: '📈', description: '学习农产品价格走势分析方法，掌握基本分析技巧�?, lessons: 8 },
+ { id: 2, title: '交易实战技�?, instructor: '李老师', duration: '6小时', level: '中级', price: 199, students: 890, rating: 4.9, cover: '⚔️', description: '实战交易策略与技巧，提高交易成功率�?, lessons: 12 },
+ { id: 3, title: '农产品供应链管理', instructor: '王经�?, duration: '5小时', level: '中级', price: 149, students: 670, rating: 4.7, cover: '📦', description: '了解农产品供应链运作模式，优化交易流程�?, lessons: 10 },
+ { id: 4, title: '风险控制与资金管�?, instructor: '赵专�?, duration: '4.5小时', level: '高级', price: 249, students: 450, rating: 4.9, cover: '🛡�?, description: '学习风险控制方法，合理管理交易资金�?, lessons: 9 },
+ { id: 5, title: '电子商务与农产品营销', instructor: '陈老师', duration: '5.5小时', level: '中级', price: 169, students: 780, rating: 4.8, cover: '💻', description: '利用互联网平台推广农产品，拓展销售渠道�?, lessons: 11 }
  ],
  
  render() {
@@ -23,15 +23,15 @@ const TrainingModule = {
  <div class="course-info">
  <h3>${course.title}</h3>
  <div class="course-meta">
- <span>讲师：${course.instructor}</span>
- <span>时长：${course.duration}</span>
- <span>难度：${course.level}</span>
+ <span>讲师�?{course.instructor}</span>
+ <span>时长�?{course.duration}</span>
+ <span>难度�?{course.level}</span>
  </div>
  <p class="course-desc">${course.description}</p>
  <div class="course-stats">
  <span>📚 ${course.lessons}课时</span>
- <span>👥 ${course.students}人学习</span>
- <span>⭐ ${course.rating}分</span>
+ <span>👥 ${course.students}人学�?/span>
+ <span>�?${course.rating}�?/span>
  </div>
  <div class="course-footer">
  <span class="course-price">¥${course.price}</span>
@@ -49,25 +49,25 @@ const TrainingModule = {
  <div class="step-number">1</div>
  <div class="step-content">
  <h4>入门阶段</h4>
- <p>学习基础概念，了解市场运作</p>
+ <p>学习基础概念，了解市场运�?/p>
  <span>推荐课程：农产品行情分析入门</span>
  </div>
  </div>
- <div class="path-arrow">→</div>
+ <div class="path-arrow">�?/div>
  <div class="path-step">
  <div class="step-number">2</div>
  <div class="step-content">
  <h4>进阶阶段</h4>
  <p>掌握交易技巧，实践操作</p>
- <span>推荐课程：交易实战技巧</span>
+ <span>推荐课程：交易实战技�?/span>
  </div>
  </div>
- <div class="path-arrow">→</div>
+ <div class="path-arrow">�?/div>
  <div class="path-step">
  <div class="step-number">3</div>
  <div class="step-content">
  <h4>高级阶段</h4>
- <p>风险管理，资金规划</p>
+ <p>风险管理，资金规�?/p>
  <span>推荐课程：风险控制与资金管理</span>
  </div>
  </div>
@@ -88,31 +88,31 @@ const TrainingModule = {
  modal.innerHTML = `
  <div class="modal-content">
  <div class="modal-header">
- <h2>报名课程：${course.title}</h2>
- <button class="modal-close" onclick="modal.remove()">×</button>
+ <h2>报名课程�?{course.title}</h2>
+ <button class="modal-close" >×</button>
  </div>
  <div class="modal-body">
  <div class="course-summary">
  <h3>课程信息</h3>
  <div class="info-grid">
  <div class="info-item">
- <span class="info-label">讲师：</span>
+ <span class="info-label">讲师�?/span>
  <span class="info-value">${course.instructor}</span>
  </div>
  <div class="info-item">
- <span class="info-label">时长：</span>
+ <span class="info-label">时长�?/span>
  <span class="info-value">${course.duration}</span>
  </div>
  <div class="info-item">
- <span class="info-label">难度：</span>
+ <span class="info-label">难度�?/span>
  <span class="info-value">${course.level}</span>
  </div>
  <div class="info-item">
- <span class="info-label">课时：</span>
+ <span class="info-label">课时�?/span>
  <span class="info-value">${course.lessons}课时</span>
  </div>
  <div class="info-item">
- <span class="info-label">价格：</span>
+ <span class="info-label">价格�?/span>
  <span class="info-value price-highlight">¥${course.price}</span>
  </div>
  </div>
@@ -123,15 +123,15 @@ const TrainingModule = {
  <form id="enrollForm">
  <div class="form-group">
  <label>姓名 *</label>
- <input type="text" name="name" required placeholder="请输入您的姓名">
+ <input type="text" name="name" required placeholder="请输入您的姓�?>
  </div>
  <div class="form-group">
- <label>手机号 *</label>
+ <label>手机�?*</label>
  <input type="tel" name="phone" required placeholder="请输入您的手机号">
  </div>
  <div class="form-group">
  <label>邮箱</label>
- <input type="email" name="email" placeholder="请输入您的邮箱">
+ <input type="email" name="email" placeholder="请输入您的邮�?>
  </div>
  <button type="submit" class="btn btn-primary btn-block">确认报名</button>
  </form>
@@ -143,7 +143,7 @@ const TrainingModule = {
  
  document.getElementById('enrollForm').onsubmit = (e) => {
  e.preventDefault();
- alert('报名成功！我们会尽快与您联系，安排课程学习。');
+ alert('报名成功！我们会尽快与您联系，安排课程学习�?);
  modal.remove();
  };
  },
@@ -380,3 +380,4 @@ const TrainingModule = {
  document.head.appendChild(style);
  }
 };
+
