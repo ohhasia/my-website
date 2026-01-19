@@ -64,19 +64,39 @@ const App = {
                 this.renderHome();
                 break;
             case 'wholesale':
-                this.loadModule('wholesale', () => WholesaleModule.render());
+                if (window.WholesaleModule) {
+                    WholesaleModule.render();
+                } else {
+                    this.loadModule('wholesale', () => WholesaleModule.render());
+                }
                 break;
             case 'market':
-                this.loadModule('market', () => MarketModule.render());
+                if (window.MarketModule) {
+                    MarketModule.render();
+                } else {
+                    this.loadModule('market', () => MarketModule.render());
+                }
                 break;
             case 'training':
-                this.loadModule('training', () => TrainingModule.render());
+                if (window.TrainingModule) {
+                    TrainingModule.render();
+                } else {
+                    this.loadModule('training', () => TrainingModule.render());
+                }
                 break;
             case 'warehouse':
-                this.loadModule('warehouse', () => WarehouseModule.render());
+                if (window.WarehouseModule) {
+                    WarehouseModule.render();
+                } else {
+                    this.loadModule('warehouse', () => WarehouseModule.render());
+                }
                 break;
             case 'loan':
-                this.loadModule('loan', () => LoanModule.render());
+                if (window.LoanModule) {
+                    LoanModule.render();
+                } else {
+                    this.loadModule('loan', () => LoanModule.render());
+                }
                 break;
             default:
                 this.renderHome();
