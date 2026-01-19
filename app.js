@@ -23,14 +23,20 @@ const App = {
         
         // 全局弹窗关闭事件委托
         document.addEventListener('click', (e) => {
+            console.log('[DEBUG] 点击事件:', e.target.className);
+            
             if (e.target.classList.contains('modal-close')) {
+                console.log('[DEBUG] 检测到modal-close按钮');
                 const modal = e.target.closest('.modal');
+                console.log('[DEBUG] 找到modal:', modal);
                 if (modal) {
+                    console.log('[DEBUG] 移除modal');
                     modal.remove();
                 }
             }
             // 点击弹窗外部关闭
             if (e.target.classList.contains('modal')) {
+                console.log('[DEBUG] 点击modal外部');
                 e.target.remove();
             }
         });
