@@ -1,9 +1,9 @@
 const WarehouseModule = {
  pledges: [
- { id: 1, warehouseNo: 'WH20240115001', product: '精品苹果', quantity: 500, unit: '�?, value: 42500, pledgeAmount: 34000, rate: 0.08, term: 90, status: 'approved', applyDate: '2024-01-15', approveDate: '2024-01-16', financial: '农业银行' },
- { id: 2, warehouseNo: 'WH20240114002', product: '五常大米', quantity: 200, unit: '�?, value: 16400, pledgeAmount: 13120, rate: 0.075, term: 60, status: 'approved', applyDate: '2024-01-14', approveDate: '2024-01-15', financial: '工商银行' },
- { id: 3, warehouseNo: 'WH20240113003', product: '土鸡�?, quantity: 300, unit: '�?, value: 16500, pledgeAmount: 13200, rate: 0.085, term: 120, status: 'pending', applyDate: '2024-01-13', financial: '建设银行' },
- { id: 4, warehouseNo: 'WH20240112004', product: '新疆红枣', quantity: 150, unit: '�?, value: 14250, pledgeAmount: 11400, rate: 0.078, term: 90, status: 'rejected', applyDate: '2024-01-12', rejectReason: '仓单信息不全', financial: '中国银行' }
+ { id: 1, warehouseNo: 'WH20240115001', product: '精品苹果', quantity: 500, unit: '箱', value: 42500, pledgeAmount: 34000, rate: 0.08, term: 90, status: 'approved', applyDate: '2024-01-15', approveDate: '2024-01-16', financial: '农业银行' },
+ { id: 2, warehouseNo: 'WH20240114002', product: '五常大米', quantity: 200, unit: '袋', value: 16400, pledgeAmount: 13120, rate: 0.075, term: 60, status: 'approved', applyDate: '2024-01-14', approveDate: '2024-01-15', financial: '工商银行' },
+ { id: 3, warehouseNo: 'WH20240113003', product: '土鸡蛋', quantity: 300, unit: '盒', value: 16500, pledgeAmount: 13200, rate: 0.085, term: 120, status: 'pending', applyDate: '2024-01-13', financial: '建设银行' },
+ { id: 4, warehouseNo: 'WH20240112004', product: '新疆红枣', quantity: 150, unit: '袋', value: 14250, pledgeAmount: 11400, rate: 0.078, term: 90, status: 'rejected', applyDate: '2024-01-12', rejectReason: '仓单信息不全', financial: '中国银行' }
  ],
  
  render() {
@@ -18,7 +18,7 @@ const WarehouseModule = {
  <div class="status-cards">
  <div class="status-card pending">
  <div class="status-count">${this.pledges.filter(p => p.status === 'pending').length}</div>
- <div class="status-label">待审�?/div>
+ <div class="status-label">待审核</div>
  </div>
  <div class="status-card approved">
  <div class="status-count">${this.pledges.filter(p => p.status === 'approved').length}</div>
@@ -26,7 +26,7 @@ const WarehouseModule = {
  </div>
  <div class="status-card rejected">
  <div class="status-count">${this.pledges.filter(p => p.status === 'rejected').length}</div>
- <div class="status-label">已拒�?/div>
+ <div class="status-label">已拒绝</div>
  </div>
  </div>
  
@@ -34,7 +34,7 @@ const WarehouseModule = {
  ${this.pledges.map(pledge => `
  <div class="pledge-item">
  <div class="pledge-header">
- <span class="pledge-no">仓单编号�?{pledge.warehouseNo}</span>
+ <span class="pledge-no">仓单编号：${pledge.warehouseNo}</span>
  <span class="pledge-status ${pledge.status}">${this.getStatusText(pledge.status)}</span>
  </div>
  
@@ -42,22 +42,22 @@ const WarehouseModule = {
  <div class="pledge-info">
  <h3>${pledge.product}</h3>
  <div class="info-row">
- <span>数量�?{pledge.quantity} ${pledge.unit}</span>
+ <span>数量：${pledge.quantity} ${pledge.unit}</span>
  <span>货物价值：¥${pledge.value.toLocaleString()}</span>
- <span>质押金额：�?{pledge.pledgeAmount.toLocaleString()}</span>
+ <span>质押金额：¥${pledge.pledgeAmount.toLocaleString()}</span>
  </div>
  <div class="info-row">
  <span>年利率：${(pledge.rate * 100).toFixed(2)}%</span>
- <span>期限�?{pledge.term}�?/span>
- <span>金融机构�?{pledge.financial}</span>
+ <span>期限：${pledge.term}天</span>
+ <span>金融机构：${pledge.financial}</span>
  </div>
  </div>
  </div>
  
  <div class="pledge-footer">
- <span>申请日期�?{pledge.applyDate}</span>
- ${pledge.status === 'approved' ? `<span>审核通过�?{pledge.approveDate}</span>` : ''}
- ${pledge.status === 'rejected' ? `<span class="reject-reason">拒绝原因�?{pledge.rejectReason}</span>` : ''}
+ <span>申请日期：${pledge.applyDate}</span>
+ ${pledge.status === 'approved' ? `<span>审核通过：${pledge.approveDate}</span>` : ''}
+ ${pledge.status === 'rejected' ? `<span class="reject-reason">拒绝原因：${pledge.rejectReason}</span>` : ''}
  </div>
  
  <div class="pledge-actions">
@@ -75,9 +75,9 @@ const WarehouseModule = {
  
  getStatusText(status) {
  const texts = {
- pending: '待审�?,
+ pending: '待审核',
  approved: '已通过',
- rejected: '已拒�?
+ rejected: '已拒绝'
  };
  return texts[status];
  },
@@ -89,7 +89,7 @@ const WarehouseModule = {
  <div class="modal-content">
  <div class="modal-header">
  <h2>申请仓单质押</h2>
- <button class="modal-close" >×</button>
+ <button class="modal-close" onclick="modal.remove()">×</button>
  </div>
  <div class="modal-body">
  <form id="pledgeForm" onsubmit="WarehouseModule.handleApply(event, this)">
@@ -110,27 +110,27 @@ const WarehouseModule = {
  
  <div class="form-group">
  <label>单位 *</label>
- <input type="text" name="unit" required placeholder="如：箱、袋、公�?>
+ <input type="text" name="unit" required placeholder="如：箱、袋、公斤">
  </div>
  
  <div class="form-group">
- <label>货物价�?�? *</label>
+ <label>货物价值(元) *</label>
  <input type="number" name="value" required min="1">
  </div>
  
  <div class="form-group">
- <label>申请质押金额(�? *</label>
+ <label>申请质押金额(元) *</label>
  <input type="number" name="pledgeAmount" required min="1">
  </div>
  
  <div class="form-group">
- <label>质押期限(�? *</label>
+ <label>质押期限(天) *</label>
  <select name="term" required>
- <option value="30">30�?/option>
- <option value="60">60�?/option>
- <option value="90">90�?/option>
- <option value="120">120�?/option>
- <option value="180">180�?/option>
+ <option value="30">30天</option>
+ <option value="60">60天</option>
+ <option value="90">90天</option>
+ <option value="120">120天</option>
+ <option value="180">180天</option>
  </select>
  </div>
  
@@ -141,7 +141,7 @@ const WarehouseModule = {
  <option value="工商银行">工商银行</option>
  <option value="建设银行">建设银行</option>
  <option value="中国银行">中国银行</option>
- <option value="农村信用�?>农村信用�?/option>
+ <option value="农村信用社">农村信用社</option>
  </select>
  </div>
  
@@ -172,16 +172,16 @@ const WarehouseModule = {
  this.pledges.unshift(data);
  document.querySelector('.modal').remove();
  this.render();
- alert('质押申请已提交！我们将在3个工作日内完成审核�?);
+ alert('质押申请已提交！我们将在3个工作日内完成审核。');
  },
  
  cancelPledge(id) {
- if (confirm('确定要撤销此质押申请吗�?)) {
+ if (confirm('确定要撤销此质押申请吗？')) {
  const pledge = this.pledges.find(p => p.id === id);
  if (pledge) {
  pledge.status = 'cancelled';
  this.render();
- alert('已撤销质押申请�?);
+ alert('已撤销质押申请！');
  }
  }
  },
@@ -196,14 +196,14 @@ const WarehouseModule = {
  <div class="modal-content detail-modal">
  <div class="modal-header">
  <h2>仓单质押详情</h2>
- <button class="modal-close" >×</button>
+ <button class="modal-close" onclick="modal.remove()">×</button>
  </div>
  <div class="modal-body">
  <div class="detail-section">
  <h3>仓单信息</h3>
  <div class="detail-grid">
  <div class="detail-item">
- <span class="detail-label">仓单编号�?/span>
+ <span class="detail-label">仓单编号：</span>
  <span class="detail-value">${pledge.warehouseNo}</span>
  </div>
  <div class="detail-item">
@@ -211,10 +211,10 @@ const WarehouseModule = {
  <span class="detail-value status-${pledge.status}">${this.getStatusText(pledge.status)}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">申请日期�?/span>
+ <span class="detail-label">申请日期：</span>
  <span class="detail-value">${pledge.applyDate}</span>
  </div>
- ${pledge.status === 'approved' ? `<div class="detail-item"><span class="detail-label">审核通过�?/span><span class="detail-value">${pledge.approveDate}</span></div>` : ''}
+ ${pledge.status === 'approved' ? `<div class="detail-item"><span class="detail-label">审核通过：</span><span class="detail-value">${pledge.approveDate}</span></div>` : ''}
  </div>
  </div>
  
@@ -222,11 +222,11 @@ const WarehouseModule = {
  <h3>货物信息</h3>
  <div class="detail-grid">
  <div class="detail-item">
- <span class="detail-label">货物名称�?/span>
+ <span class="detail-label">货物名称：</span>
  <span class="detail-value">${pledge.product}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">数量�?/span>
+ <span class="detail-label">数量：</span>
  <span class="detail-value">${pledge.quantity} ${pledge.unit}</span>
  </div>
  <div class="detail-item">
@@ -234,7 +234,7 @@ const WarehouseModule = {
  <span class="detail-value">¥${pledge.value.toLocaleString()}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">质押金额�?/span>
+ <span class="detail-label">质押金额：</span>
  <span class="detail-value price-highlight">¥${pledge.pledgeAmount.toLocaleString()}</span>
  </div>
  </div>
@@ -244,7 +244,7 @@ const WarehouseModule = {
  <h3>金融信息</h3>
  <div class="detail-grid">
  <div class="detail-item">
- <span class="detail-label">金融机构�?/span>
+ <span class="detail-label">金融机构：</span>
  <span class="detail-value">${pledge.financial}</span>
  </div>
  <div class="detail-item">
@@ -252,11 +252,11 @@ const WarehouseModule = {
  <span class="detail-value">${(pledge.rate * 100).toFixed(2)}%</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">质押期限�?/span>
- <span class="detail-value">${pledge.term}�?/span>
+ <span class="detail-label">质押期限：</span>
+ <span class="detail-value">${pledge.term}天</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">预计利息�?/span>
+ <span class="detail-label">预计利息：</span>
  <span class="detail-value">¥${((pledge.pledgeAmount * pledge.rate * pledge.term) / 365).toFixed(2)}</span>
  </div>
  </div>
@@ -266,13 +266,13 @@ const WarehouseModule = {
  <div class="detail-section">
  <h3>审核结果</h3>
  <div class="reject-notice">
- <p><strong>拒绝原因�?/strong>${pledge.rejectReason}</p>
- <p>建议：请完善仓单信息后重新提交申�?/p>
+ <p><strong>拒绝原因：</strong>${pledge.rejectReason}</p>
+ <p>建议：请完善仓单信息后重新提交申请</p>
  </div>
  </div>
  ` : ''}
  
- <button class="btn btn-primary btn-block" >关闭</button>
+ <button class="btn btn-primary btn-block" onclick="modal.remove()">关闭</button>
  </div>
  </div>
  `;
@@ -463,4 +463,3 @@ const WarehouseModule = {
  document.head.appendChild(style);
  }
 };
-

@@ -1,13 +1,13 @@
 const WholesaleModule = {
  data: [
- { id: 1, type: 'supply', product: '精品苹果', spec: '5kg/�?, price: 85, quantity: 100, unit: '�?, origin: '山东烟台', supplier: '烟台苹果合作�?, contact: '13800138001', category: '水果', publishDate: '2024-01-15', status: 'active', views: 1250 },
- { id: 2, type: 'supply', product: '五常大米', spec: '5kg/�?, price: 82, quantity: 500, unit: '�?, origin: '黑龙江五�?, supplier: '五常米业集团', contact: '13800138002', category: '粮油', publishDate: '2024-01-14', status: 'active', views: 2100 },
- { id: 3, type: 'demand', product: '有机蔬菜组合', spec: '3kg/�?, price: 65, quantity: 200, unit: '�?, origin: '山东寿光', supplier: '寿光蔬菜合作�?, contact: '13800138003', category: '蔬菜', publishDate: '2024-01-13', status: 'active', views: 890 },
- { id: 4, type: 'supply', product: '土鸡�?, spec: '30�?�?, price: 55, quantity: 1000, unit: '�?, origin: '河北邯郸', supplier: '邯郸禽蛋公司', contact: '13800138004', category: '禽蛋', publishDate: '2024-01-12', status: 'active', views: 3400 },
- { id: 5, type: 'demand', product: '野生蜂蜜', spec: '500g/�?, price: 120, quantity: 150, unit: '�?, origin: '云南西双版纳', supplier: '云南蜂业公司', contact: '13800138005', category: '副食', publishDate: '2024-01-11', status: 'active', views: 670 },
- { id: 6, type: 'supply', product: '新疆红枣', spec: '2kg/�?, price: 95, quantity: 300, unit: '�?, origin: '新疆和田', supplier: '新疆红枣合作�?, contact: '13800138006', category: '干货', publishDate: '2024-01-10', status: 'active', views: 1580 },
- { id: 7, type: 'supply', product: '散养土鸡', spec: '�?.5kg/�?, price: 160, quantity: 200, unit: '�?, origin: '安徽黄山', supplier: '黄山养殖合作�?, contact: '13800138007', category: '肉类', publishDate: '2024-01-09', status: 'active', views: 920 },
- { id: 8, type: 'demand', product: '优质面粉', spec: '10kg/�?, price: 45, quantity: 400, unit: '�?, origin: '河南郑州', supplier: '郑州面粉�?, contact: '13800138008', category: '粮油', publishDate: '2024-01-08', status: 'active', views: 1750 }
+ { id: 1, type: 'supply', product: '精品苹果', spec: '5kg/箱', price: 85, quantity: 100, unit: '箱', origin: '山东烟台', supplier: '烟台苹果合作社', contact: '13800138001', category: '水果', publishDate: '2024-01-15', status: 'active', views: 1250 },
+ { id: 2, type: 'supply', product: '五常大米', spec: '5kg/袋', price: 82, quantity: 500, unit: '袋', origin: '黑龙江五常', supplier: '五常米业集团', contact: '13800138002', category: '粮油', publishDate: '2024-01-14', status: 'active', views: 2100 },
+ { id: 3, type: 'demand', product: '有机蔬菜组合', spec: '3kg/箱', price: 65, quantity: 200, unit: '箱', origin: '山东寿光', supplier: '寿光蔬菜合作社', contact: '13800138003', category: '蔬菜', publishDate: '2024-01-13', status: 'active', views: 890 },
+ { id: 4, type: 'supply', product: '土鸡蛋', spec: '30枚/盒', price: 55, quantity: 1000, unit: '盒', origin: '河北邯郸', supplier: '邯郸禽蛋公司', contact: '13800138004', category: '禽蛋', publishDate: '2024-01-12', status: 'active', views: 3400 },
+ { id: 5, type: 'demand', product: '野生蜂蜜', spec: '500g/瓶', price: 120, quantity: 150, unit: '瓶', origin: '云南西双版纳', supplier: '云南蜂业公司', contact: '13800138005', category: '副食', publishDate: '2024-01-11', status: 'active', views: 670 },
+ { id: 6, type: 'supply', product: '新疆红枣', spec: '2kg/袋', price: 95, quantity: 300, unit: '袋', origin: '新疆和田', supplier: '新疆红枣合作社', contact: '13800138006', category: '干货', publishDate: '2024-01-10', status: 'active', views: 1580 },
+ { id: 7, type: 'supply', product: '散养土鸡', spec: '约1.5kg/只', price: 160, quantity: 200, unit: '只', origin: '安徽黄山', supplier: '黄山养殖合作社', contact: '13800138007', category: '肉类', publishDate: '2024-01-09', status: 'active', views: 920 },
+ { id: 8, type: 'demand', product: '优质面粉', spec: '10kg/袋', price: 45, quantity: 400, unit: '袋', origin: '河南郑州', supplier: '郑州面粉厂', contact: '13800138008', category: '粮油', publishDate: '2024-01-08', status: 'active', views: 1750 }
  ],
  categories: ['全部', '水果', '粮油', '蔬菜', '禽蛋', '肉类', '副食', '干货'],
  
@@ -16,7 +16,7 @@ const WholesaleModule = {
  mainContent.innerHTML = `
  <div class="wholesale-page">
  <div class="page-header">
- <h1>农产品批�?📦</h1>
+ <h1>农产品批发 📦</h1>
  <button class="btn btn-primary" onclick="WholesaleModule.showPublishModal()">发布信息</button>
  </div>
  
@@ -59,31 +59,31 @@ const WholesaleModule = {
  <div class="wholesale-item">
  <div class="item-header">
  <span class="item-type ${item.type}">${item.type === 'supply' ? '供应' : '求购'}</span>
- <span class="item-status ${item.status}">${item.status === 'active' ? '进行�? : '已结�?}</span>
+ <span class="item-status ${item.status}">${item.status === 'active' ? '进行中' : '已结束'}</span>
  </div>
  
  <div class="item-body">
  <h3>${item.product}</h3>
  <div class="item-info">
- <span>规格�?{item.spec}</span>
- <span>数量�?{item.quantity} ${item.unit}</span>
- <span>产地�?{item.origin}</span>
+ <span>规格：${item.spec}</span>
+ <span>数量：${item.quantity} ${item.unit}</span>
+ <span>产地：${item.origin}</span>
  <span>供应商：${item.supplier}</span>
  </div>
  
  <div class="item-price">
- <span class="price-label">价格�?/span>
+ <span class="price-label">价格：</span>
  <span class="price-value">¥${item.price}/${item.unit}</span>
  </div>
  
  <div class="item-meta">
  <span>📅 ${item.publishDate}</span>
- <span>👁 ${item.views}次浏�?/span>
+ <span>👁 ${item.views}次浏览</span>
  </div>
  </div>
  
  <div class="item-actions">
- <button class="btn btn-secondary" onclick="WholesaleModule.contactSupplier(${item.id})">联系供应�?/button>
+ <button class="btn btn-secondary" onclick="WholesaleModule.contactSupplier(${item.id})">联系供应商</button>
  <button class="btn btn-primary" onclick="WholesaleModule.viewDetail(${item.id})">查看详情</button>
  </div>
  </div>
@@ -135,7 +135,7 @@ const WholesaleModule = {
  <div class="modal-content">
  <div class="modal-header">
  <h2>发布批发信息</h2>
- <button class="modal-close">×</button>
+ <button class="modal-close" onclick="modal.remove()">×</button>
  </div>
  <div class="modal-body">
  <form id="publishForm" onsubmit="WholesaleModule.handlePublish(event, this)">
@@ -154,7 +154,7 @@ const WholesaleModule = {
  
  <div class="form-group">
  <label>规格 *</label>
- <input type="text" name="spec" required placeholder="如：5kg/�?>
+ <input type="text" name="spec" required placeholder="如：5kg/箱">
  </div>
  
  <div class="form-group">
@@ -164,11 +164,11 @@ const WholesaleModule = {
  
  <div class="form-group">
  <label>单位 *</label>
- <input type="text" name="unit" required placeholder="如：箱、袋、公�?>
+ <input type="text" name="unit" required placeholder="如：箱、袋、公斤">
  </div>
  
  <div class="form-group">
- <label>价格(�? *</label>
+ <label>价格(元) *</label>
  <input type="number" name="price" required min="0" step="0.01">
  </div>
  
@@ -178,7 +178,7 @@ const WholesaleModule = {
  </div>
  
  <div class="form-group">
- <label>供应�?*</label>
+ <label>供应商 *</label>
  <input type="text" name="supplier" required placeholder="请输入供应商名称">
  </div>
  
@@ -220,13 +220,13 @@ const WholesaleModule = {
  // 重新渲染
  this.render();
  
- alert('发布成功！您的信息已上架展示�?);
+ alert('发布成功！您的信息已上架展示。');
  },
  
  contactSupplier(id) {
  const item = this.data.find(item => item.id === id);
  if (item) {
- alert(`联系方式：\n\n供应商：${item.supplier}\n电话�?{item.contact}\n\n提示：您可以直接拨打上述电话联系供应商`);
+ alert(`联系方式：\n\n供应商：${item.supplier}\n电话：${item.contact}\n\n提示：您可以直接拨打上述电话联系供应商`);
  }
  },
  
@@ -240,34 +240,34 @@ const WholesaleModule = {
  <div class="modal-content detail-modal">
  <div class="modal-header">
  <h2>${item.product} - 详情</h2>
- <button class="modal-close">×</button>
+ <button class="modal-close" onclick="modal.remove()">×</button>
  </div>
  <div class="modal-body">
  <div class="detail-section">
  <h3>基本信息</h3>
  <div class="detail-grid">
  <div class="detail-item">
- <span class="detail-label">信息类型�?/span>
+ <span class="detail-label">信息类型：</span>
  <span class="detail-value">${item.type === 'supply' ? '供应' : '求购'}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">商品名称�?/span>
+ <span class="detail-label">商品名称：</span>
  <span class="detail-value">${item.product}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">规格�?/span>
+ <span class="detail-label">规格：</span>
  <span class="detail-value">${item.spec}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">数量�?/span>
+ <span class="detail-label">数量：</span>
  <span class="detail-value">${item.quantity} ${item.unit}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">产地�?/span>
+ <span class="detail-label">产地：</span>
  <span class="detail-value">${item.origin}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">分类�?/span>
+ <span class="detail-label">分类：</span>
  <span class="detail-value">${item.category}</span>
  </div>
  </div>
@@ -282,30 +282,30 @@ const WholesaleModule = {
  </div>
  
  <div class="detail-section">
- <h3>供应商信�?/h3>
+ <h3>供应商信息</h3>
  <div class="detail-grid">
  <div class="detail-item">
  <span class="detail-label">供应商名称：</span>
  <span class="detail-value">${item.supplier}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">联系方式�?/span>
+ <span class="detail-label">联系方式：</span>
  <span class="detail-value">${item.contact}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">发布时间�?/span>
+ <span class="detail-label">发布时间：</span>
  <span class="detail-value">${item.publishDate}</span>
  </div>
  <div class="detail-item">
- <span class="detail-label">浏览次数�?/span>
- <span class="detail-value">${item.views}�?/span>
+ <span class="detail-label">浏览次数：</span>
+ <span class="detail-value">${item.views}次</span>
  </div>
  </div>
  </div>
  
  <div class="detail-actions">
- <button class="btn btn-secondary" onclick="WholesaleModule.contactSupplier(${item.id})">联系供应�?/button>
- <button class="btn btn-primary" >关闭</button>
+ <button class="btn btn-secondary" onclick="WholesaleModule.contactSupplier(${item.id})">联系供应商</button>
+ <button class="btn btn-primary" onclick="modal.remove()">关闭</button>
  </div>
  </div>
  </div>
@@ -594,4 +594,3 @@ const WholesaleModule = {
  document.head.appendChild(style);
  }
 };
-
