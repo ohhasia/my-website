@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>农链通 - 功能测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .test-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+        }
+        
+        .test-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .test-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .test-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .test-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .test-features li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        
+        .test-features li::before {
+            content: '✓ ';
+            color: #52c41a;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .btn-test {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-test:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #52c41a;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌾 农链通 - 功能测试页面</h1>
+            <p>验证所有模块功能是否正常工作</p>
+        </div>
+        
+        <div class="test-grid">
+            <div class="test-card">
+                <span class="status-badge">✓ 已完成</span>
+                <div class="test-icon">📦</div>
+                <h3>农产品批发</h3>
+                <p>供应/需求信息发布与管理</p>
+                <ul class="test-features">
+                    <li>供应信息发布</li>
+                    <li>求购信息发布</li>
+                    <li>多条件搜索筛选</li>
+                    <li>供应商联系方式</li>
+                    <li>商品详情查看</li>
+                </ul>
+                <a href="index.html#wholesale" class="btn-test">立即测试</a>
+            </div>
+            
+            <div class="test-card">
+                <span class="status-badge">✓ 已完成</span>
+                <div class="test-icon">📊</div>
+                <h3>行情数据</h3>
+                <p>实时价格与趋势分析</p>
+                <ul class="test-features">
+                    <li>5个农产品品类</li>
+                    <li>ECharts图表展示</li>
+                    <li>日/周/月K线图</li>
+                    <li>涨跌幅统计</li>
+                    <li>市场资讯动态</li>
+                </ul>
+                <a href="index.html#market" class="btn-test">立即测试</a>
+            </div>
+            
+            <div class="test-card">
+                <span class="status-badge">✓ 已完成</span>
+                <div class="test-icon">📚</div>
+                <h3>交易培训</h3>
+                <p>专业课程与学习路径</p>
+                <ul class="test-features">
+                    <li>5门精品课程</li>
+                    <li>讲师信息展示</li>
+                    <li>学习路径推荐</li>
+                    <li>在线报名功能</li>
+                    <li>课程详情查看</li>
+                </ul>
+                <a href="index.html#training" class="btn-test">立即测试</a>
+            </div>
+            
+            <div class="test-card">
+                <span class="status-badge">✓ 已完成</span>
+                <div class="test-icon">🏭</div>
+                <h3>仓单质押</h3>
+                <p>质押申请与状态跟踪</p>
+                <ul class="test-features">
+                    <li>质押申请提交</li>
+                    <li>状态实时跟踪</li>
+                    <li>仓单信息管理</li>
+                    <li>金融机构对接</li>
+                    <li>申请撤销功能</li>
+                </ul>
+                <a href="index.html#warehouse" class="btn-test">立即测试</a>
+            </div>
+            
+            <div class="test-card">
+                <span class="status-badge">✓ 已完成</span>
+                <div class="test-icon">💰</div>
+                <h3>助贷服务</h3>
+                <p>智能评估与贷款申请</p>
+                <ul class="test-features">
+                    <li>3款贷款产品</li>
+                    <li>智能信用评估</li>
+                    <li>可贷额度计算</li>
+                    <li>贷款申请流程</li>
+                    <li>进度实时跟踪</li>
+                </ul>
+                <a href="index.html#loan" class="btn-test">立即测试</a>
+            </div>
+            
+            <div class="test-card">
+                <span class="status-badge">✓ 已完成</span>
+                <div class="test-icon">🚀</div>
+                <h3>系统功能</h3>
+                <p>基础架构与用户体验</p>
+                <ul class="test-features">
+                    <li>用户登录注册</li>
+                    <li>多角色权限管理</li>
+                    <li>响应式设计</li>
+                    <li>动态模块加载</li>
+                    <li>数据本地存储</li>
+                </ul>
+                <a href="index.html" class="btn-test">返回首页</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>所有模块已完成开发，可以正常使用 ✅</p>
+            <p>访问 http://localhost:8888 开始体验</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="农产品交易服务平台 - 整合批发、行情、培训、金融服务">
+    <meta name="keywords" content="农产品交易,批发,行情,仓单质押,助贷系统">
+    <title>农链通 - 农产品交易服务平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="loading-styles.css">
+    <link rel="stylesheet" href="商城样式.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 顶部导航栏 -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <span class="logo-icon">🌾</span>
+                    <span class="logo-text">农链通</span>
+                </div>
+                <span class="logo-subtitle">农产品交易服务平台</span>
+            </div>
+            <div class="header-center">
+                <nav class="main-nav">
+                    <a href="#home" class="nav-link active" onclick="App.navigateTo('home')">首页</a>
+                    <a href="#wholesale" class="nav-link" onclick="App.navigateTo('wholesale')">农产品批发</a>
+                    <a href="#market" class="nav-link" onclick="App.navigateTo('market')">行情数据</a>
+                    <a href="#training" class="nav-link" onclick="App.navigateTo('training')">交易培训</a>
+                    <a href="#warehouse" class="nav-link" onclick="App.navigateTo('warehouse')">仓单质押</a>
+                    <a href="#loan" class="nav-link" onclick="App.navigateTo('loan')">助贷服务</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <div class="user-menu" id="userMenu">
+                    <span class="user-role">游客</span>
+                    <button class="btn-login" id="loginBtn" onclick="App.showLoginModal()">登录</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 主内容区域 -->
+        <main class="main-content" id="mainContent">
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <p>农链通是专业的农产品交易服务平台，致力于连接供需双方，提供全方位的农业交易解决方案。</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#wholesale">农产品批发</a></li>
+                        <li><a href="#market">行情数据</a></li>
+                        <li><a href="#training">交易培训</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p>客服电话：400-123-4567</p>
+                    <p>邮箱：service@nongliantong.com</p>
+                    <p>工作时间：周一至周五 9:00-18:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>法律声明</h4>
+                    <p>本平台仅提供信息展示服务，所有交易需遵守相关法律法规。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 农链通 - 农产品交易服务平台. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>用户登录</h2>
+                <button class="modal-close" onclick="App.closeLoginModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" onsubmit="App.handleLogin(event)">
+                    <div class="form-group">
+                        <label>用户名</label>
+                        <input type="text" name="username" required placeholder="请输入用户名">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input type="password" name="password" required placeholder="请输入密码">
+                    </div>
+                    <div class="form-group">
+                        <label>用户类型</label>
+                        <select name="userType" required>
+                            <option value="farmer">农户</option>
+                            <option value="wholesaler">批发商</option>
+                            <option value="financial">金融机构</option>
+                            <option value="admin">管理员</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">登录</button>
+                    <p class="form-tip">演示账号：user / 123456</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="modules/wholesale.js"></script>
+    <script src="modules/market.js"></script>
+    <script src="modules/training.js"></script>
+    <script src="modules/warehouse.js"></script>
+    <script src="modules/loan.js"></script>
+    <script src="modules/auth.js"></script>
+</body>
+</html>
